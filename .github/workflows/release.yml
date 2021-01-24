@@ -10,7 +10,7 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
+  release:
 
     runs-on: ubuntu-20.04
 
@@ -29,7 +29,7 @@ jobs:
     - name: Build with Maven Kar bundle
       env:
         GITHUBTOKEN: ${{ secrets.GITHUBTOKEN }}
-      run: mvn clean package  -P buildKar 
+      run: mvn clean package  -P buildKar
 
     - uses: actions/upload-artifact@v2
       with:
